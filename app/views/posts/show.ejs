@@ -1,0 +1,40 @@
+<% layout('/layouts/default') %>
+
+<h1><%- post.title %></h1>
+<div style="background:#EEE;padding:5px;">
+	<pre class="brush: js"><%- post.body %></pre>
+<div align="right">
+<% if(post.user) { %>
+Programmer: <%- post.user.username %>
+<% } %>
+<br />
+<%- post.createdAt.toLocaleDateString() %>
+</div>
+</div>
+
+<div style="clear:both;"></div>
+
+<h4>Refactor</h4>
+<hr />
+<div class="answers">
+<% _.each(post.comments, function(c){ %>
+	<div class="answer">
+		<pre class="brush: js"><%- c.body %></pre>
+		<div align="right">
+			Refactored by <% c.user.username %>
+			<br/>
+			<%- c.createdAt.toLocaleDateString() %>
+		</div>
+	</div>
+	<hr />
+<% }) %>
+</div>
+
+<h4>Your Refactor</h4>
+<form action="/post/<%- post._id %>" method="post">
+<textarea class="form-control" name="body" rows="12"></textarea>
+<br />
+<button class="btn btn-lg btn-primary" type="submit">Submit</button>
+</form>
+
+

@@ -1,0 +1,52 @@
+<% layout('/layouts/default') %>
+
+<div class="jumbotron">
+	<h1>Refucktor</h1>
+	<p>By continuously improving the design of code, we make it easier and easier to work with. If you get into the hygienic habit of refactoring continuously, you'll find that it is easier to extend and maintain code.</p>
+	<p>Refactor codes or post a code you think has a code smell.</p>
+	<p>
+		<a class="btn btn-lg btn-primary" href="/login">Sign in</a>
+	</p>
+</div>
+
+<div class="row">
+
+	<div class="col-lg-6">
+		<h2>Code Smells</h2>
+		<div class="posts">
+			<% _.each(posts, function(post){ %>
+			<div class="row" style="margin-left:15px;border-bottom:1px #EEE solid;">
+				<div class="pull-left" style="padding:5px;background-color:#EEE;" align="center">
+					Answers
+					<br>
+					<span><%- post.comments.length %> </span>
+				</div>
+				<div class="" style="line-height:30px;">
+					<a href="/post/<%- post._id %>" style="font-size:17px;margin-left:10px;"><%- post.title %></a>
+					<% if (post.user) { %>
+					<span class="pull-right"><%- post.user.username %></span>
+					<% } else { %>
+					<span class="pull-right">Anonymous</span>
+					<% } %>
+				</div>
+				<div class="pull-right" align="right">
+					<span style="font-size:12px;" ><%- post.createdAt.toLocaleDateString() %></span>
+				</div>
+			</div>
+			<% }) %>
+		</div>
+	</div>
+
+	<div class="col-lg-5 col-lg-offset-1">
+		<h2>Or post a code to be refactored.</h2>
+
+		<form method="post" action="/post" class="form-post">
+			<input type="text" placeholder="Title" class="form-control" name="title" value="">
+			<br>
+			<textarea name="body" placeholder="Add code to be refactored.." class="form-control" rows="13"></textarea>
+			<br>
+			<button class="btn btn-primary" type="submit">Post</button>
+		</form>
+	</div>
+</div>
+

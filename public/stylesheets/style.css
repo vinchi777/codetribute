@@ -1,0 +1,24 @@
+body {
+  padding-top:60px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.form-signin {
+ padding-top:50px;
+ max-width: 330px;
+ margin: 0 auto;
+}
+.form-post {
+ padding-top:20px;
+ max-width:500px;
+}
+.answer {
+ border: 1px #EEE solid;
+ background: #EEE
+}
+.posts {
+ padding-top:20px;
+}
