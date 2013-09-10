@@ -13,7 +13,13 @@ var passport = require('passport')
 var flash = require('connect-flash');
 var _ = require('underscore');
 
-mongoose.connect('mongodb://localhost/codetribute');
+
+var uristring =
+process.env.MONGOLAB_URI ||
+process.env.MONGOHQ_URL ||
+'mongodb://localhost/codetribute';
+
+mongoose.connect(uristring);
 var app = express();
 
 // load models
