@@ -9,12 +9,12 @@
     "express" : "3.3.5",
     "jade" : "",
     "underscore" : "~1.5.2",
-	"connect-flash" : "",
-	"mongoose" : "",
-	"passport" : "",
-	"passport-local",
-	"ejs-locals" : "",
-	"ejs" : "",
-	"mongodb" : "1.1.11",
+    "connect-flash" : "",
+    "mongoose" : "",
+    "passport" : "",
+    "passport-local" : "",
+    "ejs-locals" : "",
+    "ejs" : "",
+    "mongodb" : ""
   }
 }
