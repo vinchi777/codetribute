@@ -1,20 +1,21 @@
 {
-  "name" : "refucktor",
-  "version" : "0.0.1",
-  "private" : true,
-  "scripts" : {
-    "start" : "node app.js"
+  "name": "refucktor",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
   },
-  "dependencies" : {
-    "express" : "3.3.5",
-    "jade" : "",
-    "underscore" : "~1.5.2",
-    "connect-flash" : "",
-    "mongoose" : "",
-    "passport" : "",
-    "passport-local" : "",
-    "ejs-locals" : "",
-    "ejs" : "",
-    "mongodb" : ""
+  "dependencies": {
+    "express": "3.3.5",
+    "jade": "",
+    "underscore": "~1.5.2",
+    "connect-flash": "",
+    "mongoose": "",
+    "passport": "",
+    "passport-local": "",
+    "ejs-locals": "",
+    "ejs": "",
+    "mongodb": "",
+    "passport-github": "~0.1.5"
   }
 }

@@ -9,8 +9,9 @@
 		<link href="/stylesheets/style.css" rel="stylesheet">
 
 		<!-- Include *at least* the core style and default theme -->
-		<link href="/stylesheets/shCore.css" rel="stylesheet" type="text/css" />
-		<link href="/stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<link href="/stylesheets/codemirror.css" rel="stylesheet" type="text/css" />
+		<link href="/stylesheets/solarized.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="/javascripts/jquery.js" charset="utf-8"></script>
 	</head>
 	<body >
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -38,29 +39,26 @@
 			</div>
 		</div>
 
-		<div class="container">
+		<div id="main_container" class="container">
 				<%- body -%>
 		</div><!-- /.container -->
 		<footer>
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">Made by Jude Calimbas</div>	
+					<div class="col-lg-10"><span>Author Jude Calimbas</span></div>	
+					<div class="col-lg-2"><a class='pull-right' href='https://github.com/vinchi777/refucktor'>Github</a></div>	
 				</div>
 			</div>
-		</footer>
+		</footer>	
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script type="text/javascript" src="/javascripts/underscore.js" charset="utf-8"></script>
-		<!--
-		At least one brush and the Core script, here we choose JS. You need to include a brush for every
-		language you want to highlight
-		-->
-		<script type="text/javascript" src="/javascripts/shCore.js"></script>
-		<script type="text/javascript" src="/javascripts/shBrushJScript.js"></script>
-		<script type="text/javascript">
-			SyntaxHighlighter.all()
-		</script>
+		<script type="text/javascript" src="/javascripts/codemirror.js"></script>
+		<script type="text/javascript" src="/javascripts/javascript.js"></script>
+		
+
 	</body>
+	
 </html>

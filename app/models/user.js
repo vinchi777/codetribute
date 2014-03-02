@@ -4,6 +4,8 @@ var mongoose = require('mongoose')
 var UserSchema = Schema({
 	username: String,
 	password: String,
+	githubId: String,
+	avatar_url:  String,
 	createdAt: { type: Date, default: Date.now }
 });
 

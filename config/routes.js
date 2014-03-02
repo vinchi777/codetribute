@@ -21,7 +21,19 @@ app.post('/post/:id', requireLogin(), posts.update);
 var pages = require('../app/controllers/pages');
 app.get('/', pages.index)
 app.get('/index', pages.index);
+
+//OAuth Github
+app.get('/auth/github', passport.authenticate('github'));
+app.get('/auth/github/callback',
+		passport.authenticate('github', { failureRedirect: '/login', failureFlash: true }),
+		function(req, res) {
+			// Successful authentication, redirect home.
+			res.redirect('/dashboard');
+		}
+);
+
 };
+
 
 
 function requireLogin(){

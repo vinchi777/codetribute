@@ -3,19 +3,22 @@
 	<div class="alert alert-info" style="margin-top:20px;"><%- message %></div>
 <% } %>
 <div class="row">
-	<div class="col-lg-6">
-		<h2>Hello <%- user.username %></h2>
+	<div class="col-lg-7">
+		<div id="profile">
+			<img height="120" width="120" class='img-circle pull-left' src='https://avatars.githubusercontent.com/u/<%- user.githubId %>' />
+			<h3>Hello <%- user.username %></h3>
+		</div>
 
 		<form method="post" action="/post" class="form-post">
-			<input type="text" placeholder="Title" class="form-control" name="title" value="">
+			<input type="text" placeholder="Post a Code smell" class="form-control" name="title" value="">
 			<br>
-			<textarea name="body" placeholder="Add code to be refactored.." class="form-control" rows="15"></textarea>
+			<textarea id="code_smell" name="body" placeholder="Add code to be refactored.." class="form-control" rows="15"></textarea>
 			<br>
-			<button class="btn btn-primary" type="submit">Post</button>
+			<button class="btn btn-primary" type="submit">Submit</button>
 		</form>
 	</div>
-	<div class="col-lg-6">
-		<h2>All Posts</h2>
+	<div class="col-lg-5">
+		<h2>All Code Smells</h2>
 		<div class="posts">
 		<% if (posts.length) { %>
 			<% for (i in posts) { %>
@@ -42,4 +45,19 @@
 		</div>
 	</div>
 </div>
-
+<script type="text/javascript">
+	$(function(){
+		var $this = $('#code_smell').get(0);
+		var options = {
+			theme: 'solarized',
+			mode: 'javascript',
+			lineNumbers: true,
+			autofocus: true
+		}
+		var cm = CodeMirror.fromTextArea($this, options);
+		
+		$('#answer').submit(function(e){
+			cm.save();
+		});
+	})	
+</script>

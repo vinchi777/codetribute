@@ -2,6 +2,9 @@ body {
   padding-top:60px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+body #main_container{
+	min-height: 550px;
+}
 
 a {
   color: #00B7FF;
@@ -12,13 +15,31 @@ a {
  margin: 0 auto;
 }
 .form-post {
- padding-top:20px;
- max-width:500px;
+ margin-top:20px;
+ margin-right:20px;
 }
 .answer {
  border: 1px #EEE solid;
  background: #EEE
 }
 .posts {
- padding-top:20px;
+ margin-top:20px;
+}
+footer{
+ padding: 30px;
+ background: #EEE;
+}
+#profile {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+#profile img {
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+#profile h3 {
+	line-height: 200%;
+	margin-left: 15px;
 }
