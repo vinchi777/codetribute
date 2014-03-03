@@ -8,7 +8,7 @@ app.get('/register', users.register)
 app.get('/dashboard', requireLogin(), users.dashboard)
 app.post('/register', users.create)
 app.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }),
+  passport.authenticate('local', { failureRedirect: '/', failureFlash: true }),
   function(req, res) {
     res.redirect('/dashboard');
   });
@@ -25,7 +25,7 @@ app.get('/index', pages.index);
 //OAuth Github
 app.get('/auth/github', passport.authenticate('github'));
 app.get('/auth/github/callback',
-		passport.authenticate('github', { failureRedirect: '/login', failureFlash: true }),
+		passport.authenticate('github', { failureRedirect: '/', failureFlash: true }),
 		function(req, res) {
 			// Successful authentication, redirect home.
 			res.redirect('/dashboard');
@@ -40,7 +40,7 @@ function requireLogin(){
 	return function(req, res, next){
 		if (!req.isAuthenticated()) {
 			req.flash('error', 'You need to be loged in.')
-			return res.redirect('/login')
+			return res.redirect('/')
 		}
 		next();
 	}

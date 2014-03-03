@@ -6,6 +6,6 @@ exports.index = function (req, res){
 	  .populate('user', 'username')
 	  .exec(function (err, posts) {
 		if(err){ req.flash('error', err);}
-		res.render('pages/index', { posts: posts });
+		res.render('pages/index', { posts: posts, message: req.flash('error') });
 	  })
 }
