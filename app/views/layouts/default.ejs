@@ -12,6 +12,7 @@
 		<link href="/stylesheets/codemirror.css" rel="stylesheet" type="text/css" />
 		<link href="/stylesheets/solarized.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="/javascripts/jquery.js" charset="utf-8"></script>
+		<script data-main="/javascripts/main" src="/javascripts/require.js"></script>
 	</head>
 	<body >
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -32,8 +33,6 @@
 				<ul class="nav navbar-nav navbar-right">
 					<% if (user) { %>
 					<li><a class="btn" href="/logout">Log out</a></li>
-					<% } else { %>
-					<li><a class="btn" href="/login">Sign in</a></li>
 					<% } %>
 				</ul>
 			</div>

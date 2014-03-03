@@ -6,6 +6,7 @@ var UserSchema = Schema({
 	password: String,
 	githubId: String,
 	avatar_url:  String,
+	points: Number,
 	createdAt: { type: Date, default: Date.now }
 });
 

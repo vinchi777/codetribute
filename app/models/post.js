@@ -7,6 +7,7 @@ var postSchema = Schema({
 	comments: [{
 		body: { type: String, default: ''},
 		user: { type: Schema.ObjectId, ref: 'User'},
+		votes: { type: Number, default: 0 },
 		createdAt: { type: Date, default: Date.now }
 	}],
 	createdAt: { type: Date, default: Date.now },

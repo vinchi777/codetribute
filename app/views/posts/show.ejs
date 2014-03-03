@@ -32,7 +32,7 @@ Programmer: <%- post.user.username %>
 
 <h4>Your Refactor</h4>
 <form id='answer' action="/post/<%- post._id %>" method="post">
-<textarea id='answer_txtarea'class="writable form-control" name="body" rows="12"></textarea>
+<textarea id='answer_txtarea'class="writable form-control" name="body" rows="12" required></textarea>
 <br />
 <button class="btn btn-lg btn-primary" type="submit">Submit</button>
 </form>
