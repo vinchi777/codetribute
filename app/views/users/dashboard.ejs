@@ -22,14 +22,14 @@
 		<div class="posts">
 		<% if (posts.length) { %>
 			<% for (i in posts) { %>
-				<div class="row" style="border-bottom:1px #EEE solid;">
+				<div class="row" style="border-bottom:1px #EEE solid;margin-bottom:2px;">
 					<div class="pull-left" style="padding:5px;background-color:#EEE;" align="center">
 						Answers
 						<br>
 						<span><%- posts[i].comments.length %> </span>
 					</div>
-					<div class="" style="line-height:30px;">
-						<a href="/post/<%- posts[i]._id %>" style="font-size:17px;margin-left:10px;"><%- posts[i].title %></a>
+					<div class="" >
+						<a href="/post/<%- posts[i]._id %>" style="line-height:20px;font-size:15px;margin-left:3px;"><%- posts[i].title %></a>
 						<% if(posts[i].user) { %>
 						<span class="pull-right"><%- posts[i].user.username %></span>
 						<% } else { %>
