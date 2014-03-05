@@ -1,11 +1,14 @@
 <% layout('/layouts/default') %>
 
+<% if (message.length) { %>
+	<div class="alert alert-info" style="margin-top:20px;"><%- message %></div>
+<% } %>
 <div class="jumbotron">
 	<h1>Refucktor</h1>
 	<p>By continuously improving the design of code, we make it easier and easier to work with. If you get into the hygienic habit of refactoring continuously, you'll find that it is easier to extend and maintain code.</p>
-	<p>Refactor codes or post a code you think has a code smell.</p>
+	<strong>Refactor codes or post a code you think has a code smell.</strong>
 	<p>
-		<a class="btn btn-lg btn-primary" href="/login">Sign in</a>
+		<a class="btn btn-lg btn-primary" href="/auth/github">Sign in with GitHub</a>
 	</p>
 </div>
 

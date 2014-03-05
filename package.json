@@ -16,6 +16,7 @@
     "ejs-locals": "",
     "ejs": "",
     "mongodb": "",
-    "passport-github": "~0.1.5"
+    "passport-github": "~0.1.5",
+    "moment": "~2.5.1"
   }
 }
