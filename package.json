@@ -17,6 +17,8 @@
     "ejs": "",
     "mongodb": "",
     "passport-github": "~0.1.5",
-    "moment": "~2.5.1"
+    "moment": "~2.5.1",
+    "connect-redis": "~1.4.7",
+    "connect-mongodb": "~1.1.5"
   }
 }

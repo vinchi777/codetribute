@@ -12,6 +12,7 @@ var engine = require('ejs-locals');
 var passport = require('passport')
 var flash = require('connect-flash');
 var _ = require('underscore');
+var RedisStore = require('connect-redis')(express);
 
 
 var uristring =
@@ -40,7 +41,8 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.cookieParser());
-app.use(express.session({ secret: 'keyboard cat'}));
+//app.use(express.session({ secret: 'keyboard cat'}));
+app.use(express.session({secret: 'keyboard_cat', store: new RedisStore}));
 app.use(flash());
 
 app.use(passport.initialize());

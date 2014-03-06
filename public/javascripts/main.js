@@ -15,27 +15,8 @@ require.config({
   }
 });
 
-require(['backbone', 'jquery','codemirror','javascript', 'users', 'posts' ], function ( Backbone, $, CodeMirror, js, User, Post ) {
-  var AppRouter = Backbone.Router.extend({
-    routes: {
-      "dashboard": "dashboard",
-      "post/:id": "post"
-    }
-  });
-
-  var app_router = new AppRouter;
-
-  app_router.on('route:dashboard', function(){
-    User.initialize();
-  });
-
-  app_router.on('route:post', function(){
-    $(function() {
-      Post.initialize();
-    });
-  });
-
-  Backbone.history.start({pushState: true});
+require(['backbone', 'jquery','codemirror','javascript', 'controllers/dashboard' ], function ( Backbone, $, CodeMirror, js, Dashboard ) {
+	Dashboard.initialize();
 });
 
 
