@@ -1,0 +1,20 @@
+<div class=''>
+	<h3>User</h3>
+	<hr />
+	<div class='span-10'>
+	<% if(typeof githubId != "undefined") { %> 
+		<img height="120" width="120" class='img-circle pull-left' src='https://avatars.githubusercontent.com/u/<%= githubId %>' />
+	<% } %>
+	</div>
+	<h4><%= username %></h4>
+</div>
+<style>
+div.user_window
+{
+	border:1px solid;
+	border-radius:5px;
+	color: #a8a8a8;
+	min-height: 300px;
+	margin-right: 10px;
+}
+</style>

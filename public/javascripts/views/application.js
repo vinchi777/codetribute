@@ -2,38 +2,26 @@ define([
 	'backbone',
 	'codemirror',
 	'jquery',
-	'javascript'
-], function (Backbone, CodeMirror, $, js) {
+	'javascript',
+	'views/post'
+], function (Backbone, CodeMirror, $, js, PostView) {
 
 	var App = Backbone.View.extend({
 		events: {
-			'submit		#answer'	   : 'saveToTextArea',
 			'mouseover	.posts div.row': 'highlight',
-			'mouseout	.posts div.row': 'unhighlight',
-			'click		.posts div.row': 'showCodeSmell'
+			'mouseout	.posts div.row': 'unhighlight'
 		},
 		initialize: function() {
-			this.$input_codesmell = $('#code_smell').get(0);
-			this.options = {
-				theme: 'solarized',
-				mode: 'javascript',
-				lineNumbers: true,
-				autofocus: true
-			}
-			this.cm = CodeMirror.fromTextArea(this.$input_codesmell, this.options);
-		},
-		saveToTextArea: function () {
-			this.cm.save();
+			this.$post_list = $('.posts');
+			this.listenTo(this.collection, 'add', this.addPost)
+			this.collection.fetch();
 		},
 		highlight: function (ev) { $(ev.currentTarget).css("background", "#EEE"); },
 		unhighlight: function (ev) { $(ev.currentTarget).css("background", ""); },
-		showCodeSmell: function (ev) {
-			alert($(ev.currentTarget))
+		addPost: function(model) {
+		   var view = new PostView( { model: model} );
+		   this.$post_list.prepend(view.render().el);
 		}
-
-	});
-
-	var PostView = Backbone.View.extend({
 
 	});
 

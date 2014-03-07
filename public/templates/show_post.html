@@ -1,0 +1,34 @@
+<h3>Post</h3>
+<hr />
+<h4><%= title %></h4>
+<pre>
+<%= body  %>
+</pre>
+<div id='answers_container'>
+<% if(typeof comments != 'undefined'){ %>
+	<% _.each(comments, function(v,i,l){ %>
+	<pre class='code'><%= v.body %> </pre>
+	<% }) %>
+<% } %>
+</div>
+
+
+<hr />
+<h4>Your Refactor</h4>
+<form id='answer' action="/post/<%= _id %>" method="post" name='answer'>
+<textarea id='answer_txtarea'class="writable form-control" name="body" rows="12" ></textarea>
+<br />
+<button class="btn btn-lg btn-primary" type="submit">Submit</button>
+</form>
+
+<style>
+
+div.user_window
+{
+	border:1px solid;
+	border-radius:5px;
+	color: #a8a8a8;
+	min-height: 300px;
+	margin-right: 10px;
+}
+</style>

@@ -1,47 +1,26 @@
 <% layout('/layouts/default') %>
-<% if (message.length) { %>
-	<div class="alert alert-info" style="margin-top:20px;"><%- message %></div>
-<% } %>
 <div class="row">
-	<div class="col-lg-7">
-		<div id="profile">
-			<img height="120" width="120" class='img-circle pull-left' src='https://avatars.githubusercontent.com/u/<%- user.githubId %>' />
-			<h3>Hello <%- user.username %></h3>
-		</div>
-
-		<form method="post" action="/post" class="form-post">
-			<input type="text" placeholder="Post a Code smell" class="form-control" name="title" value="" required>
-			<br>
-			<textarea id="code_smell" name="body" placeholder="Add code to be refactored.." class="form-control" rows="15" ></textarea>
-			<br>
-			<button class="btn btn-primary" type="submit">Submit</button>
-		</form>
-	</div>
-	<div class="col-lg-5">
-		<h2>All Code Smells</h2>
-		<div class="posts">
-		<% if (posts.length) { %>
-			<% for (i in posts) { %>
-				<div class="row" style="border-bottom:1px #EEE solid;margin-bottom:2px;">
-					<div class="pull-left" style="padding:5px;background-color:#EEE;" align="center">
-						Answers
-						<br>
-						<span><%- posts[i].comments.length %> </span>
-					</div>
-					<div class="" >
-						<a href="/post/<%- posts[i]._id %>" style="line-height:20px;font-size:15px;margin-left:3px;"><%- posts[i].title %></a>
-						<% if(posts[i].user) { %>
-						<span class="pull-right"><%- posts[i].user.username %></span>
-						<% } else { %>
-						<span class="pull-right">Anonymous</span>
-						<% } %>
-					</div>
-					<div class="pull-right" align="right">
-						 <span style="font-size:12px;" ><%- posts[i].createdAt.toLocaleDateString() %></span>
-					</div>
+	<div class="col-lg-8">
+		<div class='row'>
+			<div class='col-lg-12'>
+				<div id="profile" style="height:120px;">
+					<img height="120" width="120" class='img-circle pull-left' src='https://avatars.githubusercontent.com/u/<%- user.githubId %>' />
+					<h3>Hello <%- user.username %></h3>
 				</div>
-			<% } %>
-		<% } %>
+			</div>
+		</div>
+		<div class='row user_window 'style="margin-bottom:100px;">
+			<div class='col-lg-12'>
+				<div id="main_window" >
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<h2>All Code Smells</h2>
+		<div class="posts" >
+		
 		</div>
 	</div>
 </div>

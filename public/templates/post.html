@@ -1,0 +1,19 @@
+<div class="post row" style="border-bottom:1px #EEE solid;margin-bottom:2px;">
+	<div class="pull-left" style="padding:5px;background-color:#EEE;" align="center">
+		Answers
+		<br>
+		<span>   <%= comments.length %>  </span>
+	</div>
+	<div class="" >
+		<% if( typeof title != 'undefined' ){ %>
+		<a href="#post/<%= _id %>" style="line-height:20px;font-size:15px;margin-left:3px;"><%= title %></a>
+		<% } %>
+		
+	</div>
+	<div class="pull-right" align="right">
+		<span style="font-size:12px;" ></span>
+		<% if( user ){ %>
+		<span class="pull-right"><small><%= createdAt %></small> <a href='#user/<%= user._id %>'><%= user.username  %></a> </span>
+		<% } %>
+	</div>
+</div>

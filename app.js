@@ -13,6 +13,8 @@ var passport = require('passport')
 var flash = require('connect-flash');
 var _ = require('underscore');
 var RedisStore = require('connect-redis')(express);
+var cors = require('cors');
+//var MongoStore = require('connect-mongodb')(express);
 
 
 var uristring =
@@ -36,7 +38,7 @@ app.set('view engine', 'ejs');
 app.engine('ejs', engine);
 
 
-
+app.use(cors());
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());

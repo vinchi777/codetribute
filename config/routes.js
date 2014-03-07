@@ -2,20 +2,15 @@ var flash = require('connect-flash');
 module.exports = function(app, passport){
 
 var users = require('../app/controllers/users');
-app.get('/login', users.login)
-app.get('/logout', users.logout)
-app.get('/register', users.register)
-app.get('/dashboard', requireLogin(), users.dashboard)
-app.post('/register', users.create)
-app.post('/login',
-  passport.authenticate('local', { failureRedirect: '/', failureFlash: true }),
-  function(req, res) {
-    res.redirect('/dashboard');
-  });
+app.get('/logout', users.logout);
+app.get('/dashboard', requireLogin(), users.dashboard);
+app.get('/posts', users.listPosts);
+app.get('/user/:id', users.getUser);
 
 var posts = require('../app/controllers/posts');
 app.post('/post', posts.create);
 app.get('/post/:id', posts.show);
+app.get('/post', posts.index);
 app.post('/post/:id', requireLogin(), posts.update);
 
 var pages = require('../app/controllers/pages');
